@@ -3,8 +3,7 @@ Small web scraper to quickly evaluate list of ML algorithms against whitepapers 
 
 ## How to use
 
-Modify the query_base to whatever you like to query, and then add machine algorithms
-you want to query to list  
+Modify the QUERY_BASE and ALGORITHM_LIST to whatever you like to query.
 
 ## Troubleshooting
 
