@@ -37,7 +37,7 @@ def main():
         print("Somehow you did not get any results. " +
               "Check if Google is suspicious of you being a bot.")
         sys.exit(1)
-    print("Results for scraping")
+    print("Results for scraping using base query of: \"{}\"".format(QUERY_BASE))
     print("{:<{align_left}}\t{:>8}".format("ML algorithm",
                                            "Number of publications", align_left=longest_alg_length))
     print("-"*(longest_alg_length + 5 + len("Number of publications")))
