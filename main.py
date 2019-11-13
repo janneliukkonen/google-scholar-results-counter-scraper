@@ -18,8 +18,7 @@ QUERY_BASE = "machine learning network optimization lte SON parameter"
 
 
 def main():
-    """Main function of this program.
-    """
+    """Main function of this program."""
     results = {}
     for ml_alg in ALGORITHM_LIST:
         query = " ".join([QUERY_BASE, ml_alg])
@@ -30,6 +29,8 @@ def main():
         results_element = tree.xpath('//*[@id="gs_ab_md"]/div')
         if results_element and results_element[0]:
             total_publications = re.findall("\\d+", results_element[0].text)
+            # Join the numbers as they are separated by space,
+            # e.g. "23 000"
             results[ml_alg] = int("".join(total_publications))
     # To align end results print
     longest_alg_length = len(max(ALGORITHM_LIST, key=len))
