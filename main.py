@@ -12,7 +12,8 @@ ALGORITHM_LIST = [
     "Linear Regression", "Logistic Regression", "Decision Tree", "SVM",
     "Naive Bayes", "kNN", "K-Means", "Random Forest",
     "Dimensionality Reduction Algorithms", "Gradient Boosting algorithms",
-    "GBM", "XGBoost", "LightGBM", "CatBoost"
+    "GBM", "XGBoost", "LightGBM", "CatBoost", "Deep Learning",
+    "Reinforcement learning", "Neural net"
 ]
 QUERY_BASE = "machine learning network optimization lte SON parameter"
 
@@ -38,14 +39,19 @@ def main():
         print("Somehow you did not get any results. " +
               "Check if Google is suspicious of you being a bot.")
         sys.exit(1)
-    print("Results for scraping using base query of: \"{}\"".format(QUERY_BASE))
+    print(
+        "Results for scraping using base query of: \"{}\"".format(QUERY_BASE))
     print("{:<{align_left}}\t{:>8}".format("ML algorithm",
-                                           "Number of publications", align_left=longest_alg_length))
-    print("-"*(longest_alg_length + 5 + len("Number of publications")))
+                                           "Number of publications",
+                                           align_left=longest_alg_length))
+    print("-" * (longest_alg_length + 5 + len("Number of publications")))
     # Sort results by highest count.
-    for result in sorted(results.items(), key=operator.itemgetter(1), reverse=True):
-        print("{:<{align_left}}\t{:>8}".format(
-            result[0], result[1], align_left=longest_alg_length))
+    for result in sorted(results.items(),
+                         key=operator.itemgetter(1),
+                         reverse=True):
+        print("{:<{align_left}}\t{:>8}".format(result[0],
+                                               result[1],
+                                               align_left=longest_alg_length))
     sys.exit(0)
 
 
